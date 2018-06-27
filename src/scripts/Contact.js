@@ -10,6 +10,10 @@ const deleteContact = () => {
   })
 }
 
+const editContact = () => {
+  const contactId = event.currentTarget.parentNode.id
+}
+
 const contact = Object.create({}, {
   "createContactComponent": {
     value: function(contact) {
@@ -23,6 +27,12 @@ const contact = Object.create({}, {
           deleteButton.textContent = "Delete"
           deleteButton.addEventListener("click", deleteContact)
           contactSection.appendChild(deleteButton)
+
+          const editButton = document.createElement("button")
+          editButton.textContent = "Delete"
+          editButton.addEventListener("click", editContact)
+          contactSection.appendChild(editButton)
+
         } else {
           const paraElement = document.createElement("p")
           paraElement.textContent = `${key}: ${contact[key]}`
